@@ -16,7 +16,7 @@ class Solution:
         
         return before.next
 
-
+#Max Sliding Window
 from sortedcontainers import SortedList
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
@@ -31,3 +31,28 @@ class Solution:
             ans.append(l[-1])
 
         return ans
+
+#1615. Maximal Network Rank
+
+class Solution:
+    def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
+        d = {}
+        if roads == []:
+            return 0
+        visited = set()
+        adjlist = defaultdict(list)
+        for road in roads:
+            adjlist[road[0]].append(road[1])
+            adjlist[road[1]].append(road[0])
+
+        maxi = 0
+        for i in range(n):
+            for j in range(n):
+                if j == i:
+                    continue
+                temp = len(adjlist[i] + adjlist[j])
+                if i in adjlist[j]:
+                    temp -= 1
+                maxi = max(maxi, temp)
+        return maxi
+
