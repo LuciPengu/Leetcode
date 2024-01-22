@@ -3,7 +3,7 @@ class Solution:
         
         stack = []
         res = 0
-        arr = arr + [float("-inf")]
+        arr += [float("-inf")]
         for i, n in enumerate(arr):
             while stack and n < stack[-1][1]:
                 j, m = stack.pop()
@@ -11,7 +11,7 @@ class Solution:
                 left = j - stack[-1][0] if stack else j+1
                 right = i - j
                 
-                res = (res + m * left * right)
+                res += m * left * right
             stack.append((i,n))
         
         return res %(10 ** 9 + 7)
