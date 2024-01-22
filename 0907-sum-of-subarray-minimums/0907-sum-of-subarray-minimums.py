@@ -7,7 +7,7 @@ class Solution:
         for i, n in enumerate(arr):
             while stack and n < stack[-1][1]:
                 j, m = stack.pop()
-                print(j,m)
+                #print(j,m)
                 left = j - stack[-1][0] if stack else j+1
                 right = i - j
                 
