@@ -1,16 +1,11 @@
 class Solution:
-    def rob(self, a: List[int]) -> int:
-        def solve(ind,a):
-            if ind==0:
-                return a[ind]
-            if ind<0:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        @cache
+        def getRobbed(ptr):
+            if ptr >= len(nums):
                 return 0
-            if dp[ind]!=-1:
-                return dp[ind]
-            pick=a[ind]+solve(ind-2,a)
-            non_pick=0+solve(ind-1,a)
-            dp[ind]=max(pick,non_pick)
-            return dp[ind]
-        n=len(a)
-        dp=[-1]*n
-        return solve(n-1,a)
+            return nums[ptr] + max(getRobbed(ptr+2), getRobbed(ptr+3))
+
+        return getRobbed(-2) - nums[-2]
