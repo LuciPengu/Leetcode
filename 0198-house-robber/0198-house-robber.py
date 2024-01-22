@@ -4,7 +4,6 @@ class Solution:
         def dfs(i,c):
             if i >= len(nums):
                 return c  
-            res = max(dfs(i+1,c),dfs(i+2,c+nums[i]))
-            return res
+            return max(dfs(i+1,c),dfs(i+2,c+nums[i]))
         return dfs(0,0)
             
