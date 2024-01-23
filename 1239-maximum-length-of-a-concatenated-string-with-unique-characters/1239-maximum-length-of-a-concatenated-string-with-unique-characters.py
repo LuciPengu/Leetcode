@@ -4,6 +4,7 @@ class Solution:
         def validStr(string):
             return len(set(string)) == len(string)
         
+        @cache
         def dfs(c,i):
             if i >= len(arr):
                 return len(c)
