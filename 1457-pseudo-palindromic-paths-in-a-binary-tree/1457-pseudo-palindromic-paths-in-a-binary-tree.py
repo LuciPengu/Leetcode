@@ -14,11 +14,8 @@ class Solution:
                     oddcount += 1
                 total += count[i]
             
-            if total % 2 != 0:
-                return oddcount == 1
-            else:
-                return oddcount == 0
-        
+            return oddcount == 0 if total % 2 == 0 else oddcount == 1
+
         res = 0
         def dfs(node, count):
             nonlocal res
@@ -35,7 +32,5 @@ class Solution:
             
             count[node.val] -= 1
             
-        count = defaultdict(int)
-
-        dfs(root, count)
+        dfs(root, defaultdict(int))
         return res
