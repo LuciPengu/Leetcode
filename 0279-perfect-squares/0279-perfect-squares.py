@@ -8,7 +8,6 @@ class Solution:
             nonlocal currmin
             if c > currmin:
                 return float("inf")
-            print(i,c)
             if i == 0:
                 return c
             if i < 0:
