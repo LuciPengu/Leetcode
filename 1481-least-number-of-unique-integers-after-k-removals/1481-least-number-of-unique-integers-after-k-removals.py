@@ -4,7 +4,6 @@ class Solution:
         
         arr = list(set(arr))
         arr.sort(key=lambda x:count[x])
-        print(arr)
         for i in arr:
             if k >= count[i]:
                 k -= count[i]
