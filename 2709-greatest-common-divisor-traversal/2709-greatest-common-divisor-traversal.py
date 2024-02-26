@@ -1,7 +1,9 @@
 class Solution:
     def canTraverseAllPairs(self, nums: List[int]) -> bool:
-        dicto = {}
-        def prime_factors(n):
+        
+        n = len(nums)
+        
+        def primeFactors(n):
             i = 2
             factors = set()
             while i * i <= n:
@@ -16,8 +18,8 @@ class Solution:
         
         seen = {}
         adjlist = defaultdict(list)
-        for i in range(len(nums)):
-            for prime in prime_factors(nums[i]):
+        for i in range(n):
+            for prime in primeFactors(nums[i]):
                 if prime in seen:
                     adjlist[i].append(seen[prime])
                     adjlist[seen[prime]].append(i)
@@ -34,4 +36,4 @@ class Solution:
                 
         dfs(0)
         
-        return len(visited) == len(nums)
+        return len(visited) == n
