@@ -25,7 +25,8 @@ class Solution:
                     adjlist[seen[prime]].append(i)
                 else:
                     seen[prime] = i
-                        
+        
+        print(adjlist)
         visited = set()
         def dfs(i):
             if i in visited:
