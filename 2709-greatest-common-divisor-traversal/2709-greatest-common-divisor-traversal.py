@@ -17,12 +17,12 @@ class Solution:
             return factors
         
         seen = {}
-        adjlist = defaultdict(list)
+        adjlist = defaultdict(set)
         for i in range(n):
             for prime in primeFactors(nums[i]):
                 if prime in seen:
-                    adjlist[i].append(seen[prime])
-                    adjlist[seen[prime]].append(i)
+                    adjlist[i].add(seen[prime])
+                    adjlist[seen[prime]].add(i)
                 else:
                     seen[prime] = i
                         
