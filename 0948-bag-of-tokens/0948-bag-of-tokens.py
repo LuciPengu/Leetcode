@@ -1,7 +1,6 @@
 class Solution:
     def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
         tokens.sort()
-        print(tokens)
         score = 0
         if tokens == []:
             return 0
