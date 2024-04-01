@@ -13,7 +13,7 @@ class Solution:
 			# Eg. if comb was 01001 (where n=4 and k=2)
 			# We would add an edge from node 0100 to node 1001
             adjlist[tuple(comb[:-1])].append(tuple(comb[1:]))
-        
+        print(adjlist)
 		# Then we just use Hierholzer's to fine an Euler circuit.
         path = []
         def dfs(node):
