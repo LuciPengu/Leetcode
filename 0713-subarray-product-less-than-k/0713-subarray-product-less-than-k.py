@@ -8,12 +8,8 @@ class Solution:
         for r in range(len(nums)):
             curr *= nums[r]
             while(curr >= k):
-                try:
-                    curr /= nums[l]
-                    l+=1
-                except:
-                    return count
-                
+                curr /= nums[l]
+                l+=1
             count += (r - l) + 1
         
         return count
