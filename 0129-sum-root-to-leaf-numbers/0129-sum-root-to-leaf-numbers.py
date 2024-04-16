@@ -7,16 +7,13 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         
-        paths = []
         def dfs(root, path):
             
             if root == None:
-                return
+                return 0
             curr = str(root.val)
             if root.left == None and root.right == None:
-                paths.append(path+curr)
-            dfs(root.left, path+curr)
-            dfs(root.right, path+curr)
+                return int(path+curr)
+            return dfs(root.left, path+curr) + dfs(root.right, path+curr)
       
-        dfs(root, "")
-        return sum([int(i) for i in paths])
+        return dfs(root, "")
