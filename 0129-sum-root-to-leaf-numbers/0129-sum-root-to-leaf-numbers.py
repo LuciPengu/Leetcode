@@ -14,7 +14,6 @@ class Solution:
                 return
             curr = str(root.val)
             if root.left == None and root.right == None:
-                print(path,curr)
                 paths.append(path+curr)
             dfs(root.left, path+curr)
             dfs(root.right, path+curr)
