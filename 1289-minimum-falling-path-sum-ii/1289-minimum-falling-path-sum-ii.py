@@ -5,8 +5,11 @@ class Solution:
         found = set()
         @cache
         def dfs(x,y):
+
             if x == width-1:
                 return grid[x][y]
+            
+            
 
             res = float("inf")
             for nextX in range(width):
@@ -19,4 +22,4 @@ class Solution:
         for col in range(width):
             res = min(res, dfs(0,col))
         print(found)
-        return res
+        return min(res, dfs(0,0))
