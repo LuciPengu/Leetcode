@@ -3,7 +3,7 @@ class Solution:
         
         v1 = v1.split(".")
         v2 = v2.split(".")
-        n = max(len(v1), len(v2))
+        n = len(max(v1, v2))
         
         v2 = v2 + ["0"]*(n-len(v2))
         v1 = v1 + ["0"]*(n-len(v1))
