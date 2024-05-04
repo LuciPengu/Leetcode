@@ -3,16 +3,23 @@ class Solution:
         
         v1 = v1.split(".")
         v2 = v2.split(".")
-        v1arr, v2arr = [], []
-        for char in v1:
-            v1arr.append(int(char))
-        for char in v2:
-            v2arr.append(int(char))
+        n = max(len(v1), len(v2))
         
+        v2 = v2 + ["0"]*(n-len(v2))
+        v1 = v1 + ["0"]*(n-len(v1))
+        
+
+        v1arr, v2arr = [], []
+        for i in range(n):
+            
+            if int(v2[i]) < int(v1[i]):
+                return 1
+            elif int(v2[i]) > int(v1[i]):
+                return -1
+        return 0
         
         if v1arr == v2arr:
             return 0
-        
         
         for i in range(len(v1arr)):
             try:
