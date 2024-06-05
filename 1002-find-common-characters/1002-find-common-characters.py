@@ -4,5 +4,5 @@ class Solution:
         for word in words:
             res &= Counter(word)
             print(res)
-        return (res.elements())
+        return res.elements()
         
