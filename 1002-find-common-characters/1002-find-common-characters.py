@@ -3,6 +3,5 @@ class Solution:
         res = Counter(words[0])
         for word in words:
             res &= Counter(word)
-            print(res)
         return res.elements()
         
