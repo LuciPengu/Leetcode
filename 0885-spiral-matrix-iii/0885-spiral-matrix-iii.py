@@ -5,12 +5,14 @@ class Solution:
         go = 0
         mode = 0
         soln = []
-        for i in range(100):
+        added = 0
+        while added < rows * cols:
             if mode == 0:
                 go += 1
                 for i in range(go):
                     if x in range(rows) and y in range(cols):
                         soln.append([x,y])
+                        added += 1
                     y += 1
                 mode += 1
             
@@ -18,6 +20,7 @@ class Solution:
                 for i in range(go):
                     if x in range(rows) and y in range(cols):
                         soln.append([x,y])
+                        added += 1
                     x += 1
                 mode += 1
             if mode == 2:
@@ -25,12 +28,14 @@ class Solution:
                 for i in range(go):
                     if x in range(rows) and y in range(cols):
                         soln.append([x,y])
+                        added += 1
                     y -= 1
                 mode += 1
             if mode == 3:
                 for i in range(go):
                     if x in range(rows) and y in range(cols):
                         soln.append([x,y])
+                        added += 1
                     x -= 1
                 mode = 0
         return soln
