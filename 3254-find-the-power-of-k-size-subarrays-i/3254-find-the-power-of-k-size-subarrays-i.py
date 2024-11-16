@@ -19,7 +19,6 @@ class Solution:
             ans.append(nums[i])
         else:
             ans.append(-1)
-        print(ans, prev, count)
         
         for i in range(k, n):
             print(nums[i])
